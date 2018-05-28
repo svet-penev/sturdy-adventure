@@ -11,5 +11,19 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+/* --- JAVASCRIPT ---*/
+
+/* Frontend javascript */
+mix.js('resources/assets/js/frontend/app.js', 'public/js/frontend');
+
+/* Backend javascript */
+mix.js('resources/assets/js/backend/theme/dashboard.js', 'public/js/backend');
+
+
+/* --- STYLE ---*/
+
+/* Frontend style */
+mix.sass('resources/assets/sass/frontend/app.scss', 'public/css/frontend');
+
+/* Backend style */
+mix.sass('resources/assets/sass/backend/style.scss', 'public/css/backend/theme.css');
