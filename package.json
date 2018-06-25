@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "@mdi/font": "^2.4.85",
+        "bootstrap-vue": "^2.0.0-rc.11",
         "compass-mixins": "^0.12.10",
         "vue-router": "^3.0.1"
     }

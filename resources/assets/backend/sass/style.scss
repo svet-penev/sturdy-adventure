@@ -1,0 +1,20 @@
+.page-link {
+  color: #777f87;
+}
+
+.page-link:hover {
+  background: #f2edf3;
+  color: #777f87;
+}
+
+.page-item.disabled {
+  opacity: 0.5;
+}
+
+.page-item.active .page-link {
+  background: -webkit-gradient(linear, left top, right top, from(#da8cff), to(#9a55ff));
+  background: linear-gradient(to right, #da8cff, #9a55ff);
+  border-color: #dee2e6;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}

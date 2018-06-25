@@ -19,6 +19,7 @@ let mix = require('laravel-mix');
 /* Backend style */
 mix.sass('node_modules/@mdi/font/scss/materialdesignicons.scss', 'public/css/backend/material.css');
 mix.sass('resources/assets/backend/sass/theme/style.scss', 'public/css/backend/theme.css');
+mix.sass('resources/assets/backend/sass/style.scss', 'public/css/backend/style.css');
 
 
 /* --- JAVASCRIPT ---*/

@@ -8,6 +8,7 @@
 
     <link href="{{ asset('css/backend/material.css') }}" rel="stylesheet">
     <link href="{{ asset('css/backend/theme.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/backend/style.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">

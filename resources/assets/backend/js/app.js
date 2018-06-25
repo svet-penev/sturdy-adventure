@@ -2,9 +2,11 @@ require('./routes');
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import BootstrapVue from 'bootstrap-vue'
 import App from './views/layout/App'
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
+Vue.use(BootstrapVue);
 
 Vue.component('top-bar-component', require('./components/layout/TopBarComponent.vue'));
 Vue.component('menu-component', require('./components/layout/MenuComponent.vue'));
@@ -16,17 +18,39 @@ const router = new VueRouter({
 });
 
 let globalData = new Vue({
-    data: { $pageHeader: '' }
+    data: {
+        $pageHeader: '',
+        $pageBreadcrumb : []
+    }
 });
+
 Vue.mixin({
     computed: {
         $pageHeader: {
             get: function () { return globalData.$data.$pageHeader },
             set: function (newPageHeader) { globalData.$data.$pageHeader = newPageHeader; }
+        },
+        $pageBreadcrumb: {
+            get: function () { return globalData.$data.$pageBreadcrumb },
+            set: function (newPageBreadcrumb) { globalData.$data.$pageBreadcrumb = newPageBreadcrumb; }
+        }
+    },
+    methods: {
+        buildTableColumns: function (items, columns) {
+            let newData = [];
+            items.forEach((value) => {
+                let item = {};
+                columns.forEach((column) => {
+                    item[column] = value[column];
+                });
+                item.action = value.id;
+                newData.push(item);
+            });
+            
+            return newData;
         }
     }
-})
-
+});
 
 export const app = new Vue({
     el: '#app',

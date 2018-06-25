@@ -1,6 +1,8 @@
 import Hello from './views/Hello'
 import Home from './views/Home'
-import UsersIndex from './views/UsersIndex'
+import UserIndex from './views/user/Index'
+import UserCreate from './views/user/Create'
+import UserUpdate from './views/user/Update'
 
 window.routes = [
         {
@@ -16,7 +18,17 @@ window.routes = [
         {
             path: '/users',
             name: 'users.index',
-            component: UsersIndex,
+            component: UserIndex,
+        },
+        {
+            path: '/users/create',
+            name: 'users.create',
+            component: UserCreate,
+        },
+        {
+            path: '/users/update/:id',
+            name: 'users.update',
+            component: UserUpdate,
         },
     ];
 
