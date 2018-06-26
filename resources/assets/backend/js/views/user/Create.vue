@@ -61,10 +61,17 @@
                     .then(response => {
                         this.item = response.data.data
                         this.loading = false;
+                        this.$notify({
+                            title: 'User was succesfully created!',
+                        });
                         this.$router.push('update/'+this.item.id);
                     }).catch(error => {
                         this.loading = false;
                         this.error = error;
+                        this.$notify({
+                            type: 'error',
+                            title: 'Something goes wrong!',
+                        });
                     });
             }
         }

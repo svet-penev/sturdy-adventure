@@ -76,8 +76,15 @@
                     .put('/api/users/'+this.item.id, this.item)
                     .then(response => {
                         this.loading = false;
+                          this.$notify({
+                            title: 'User was succesfully updated!',
+                        });
                     }).catch(error => {
                         this.loading = false;
+                        this.$notify({
+                            type: 'error',
+                            title: 'Something goes wrong!',
+                        });
                     });
             }
         }

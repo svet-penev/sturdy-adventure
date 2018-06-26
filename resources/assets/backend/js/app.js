@@ -4,9 +4,11 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import BootstrapVue from 'bootstrap-vue'
 import App from './views/layout/App'
+import Notifications from 'vue-notification'
 
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
+Vue.use(Notifications);
 
 Vue.component('top-bar-component', require('./components/layout/TopBarComponent.vue'));
 Vue.component('menu-component', require('./components/layout/MenuComponent.vue'));

@@ -1,5 +1,6 @@
 <template>
     <div>
+        <notifications/>
         <top-bar-component></top-bar-component>
         <div class="container-fluid page-body-wrapper">
 

@@ -20,8 +20,12 @@
 
                     <b-table hover :items="items">
                         <template slot="action" slot-scope="data">
-                            <b-link :to="{ name: 'users.update', params: { 'id': data.item.action } }">update</b-link>
-                            <b-btn click="deleteData(data)">delete</b-btn>
+                            <b-link :to="{ name: 'users.update', params: { 'id': data.item.action } }">
+                                <i class="mdi mdi-grease-pencil"></i>
+                            </b-link>
+                            <b-link @click="deleteData(data)">
+                                <i class="mdi mdi-delete"></i>
+                            </b-link>
                         </template>
                     </b-table>
 
@@ -72,12 +76,24 @@
             pageChange(page) {
                 this.fetchData(page);
             },
-            updateData(item) {
-
-            },
             deleteData(item) {
-
-            }
+                 axios
+                    .delete('/api/users/'+item.item.action)
+                    .then(response => {
+                          this.$notify({
+                            title: 'Delete User',
+                            text: response.data.data.name+' was succesfully deleted!'
+                        });
+                        this.loading = false;
+                        this.fetchData();
+                    }).catch(error => {
+                        this.loading = false;
+                        this.$notify({
+                            type: 'error',
+                            title: 'Something goes wrong!',
+                        });
+                    });
+            }   
         }
     }
 </script>
