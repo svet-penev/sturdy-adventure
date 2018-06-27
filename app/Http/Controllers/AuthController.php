@@ -1,0 +1,61 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class AuthController extends Controller
+{
+    public function login(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if ( ! $token = JWTAuth::attempt($credentials)) {
+                return response([
+                    'status' => 'error',
+                    'error' => 'invalid.credentials',
+                    'msg' => 'Invalid Credentials.'
+                ], 400);
+        }
+
+        return response([
+                'status' => 'success'
+            ])
+            ->header('Authorization', $token);
+    }
+
+    /**
+     * @param Request $request
+     * @return void
+     */
+    public function user(Request $request)
+    {
+        $user = User::find(Auth::user()->id);
+        return response([
+                'status' => 'success',
+                'data' => $user
+            ]);
+    }
+
+    /**
+     * @return void
+     */
+    public function refresh()
+    {
+        return response([
+                'status' => 'success'
+            ]);
+    }
+
+    /**
+     * @return void
+     */
+    public function logout()
+    {
+        JWTAuth::invalidate();
+        return response([
+                'status' => 'success',
+                'msg' => 'Logged out Successfully.'
+            ], 200);
+    }
+}

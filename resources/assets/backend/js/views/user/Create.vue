@@ -32,8 +32,6 @@
     </div>
 </template>
 <script>
-    import axios from 'axios';
-
     export default {
         mounted() {
             this.$pageHeader = 'Create User';
@@ -56,7 +54,7 @@
             saveData() {
                 this.error = null;
                 this.loading = true;
-                axios
+                this.http
                     .post('/api/users', this.item)
                     .then(response => {
                         this.item = response.data.data

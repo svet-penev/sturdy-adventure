@@ -33,8 +33,6 @@
     </div>
 </template>
 <script>
-    import axios from 'axios';
-
     export default {
         mounted() {
             this.$pageHeader = 'Update User';
@@ -60,7 +58,7 @@
             fetchData() {
                 this.error = null;
                 this.loading = true;
-                axios
+                this.http
                     .get('/api/users/'+this.item.id)
                     .then(response => {
                         this.item = response.data.data;
@@ -72,7 +70,7 @@
             saveData() {
                 this.error = null;
                 this.loading = true;
-                axios
+                this.http
                     .put('/api/users/'+this.item.id, this.item)
                     .then(response => {
                         this.loading = false;

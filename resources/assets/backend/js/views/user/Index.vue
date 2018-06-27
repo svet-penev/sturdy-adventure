@@ -37,8 +37,6 @@
     </div>
 </template>
 <script>
-    import axios from 'axios';
-
     export default {
         mounted() {
             this.$pageHeader = 'Users';
@@ -62,7 +60,7 @@
             fetchData(page) {
                 this.error = this.items = null;
                 this.loading = true;
-                axios
+                this.http
                     .get('/api/users?page='+page)
                     .then(response => {
                         this.loading = false;
@@ -77,7 +75,7 @@
                 this.fetchData(page);
             },
             deleteData(item) {
-                 axios
+                 this.http
                     .delete('/api/users/'+item.item.action)
                     .then(response => {
                           this.$notify({

@@ -5,20 +5,43 @@ import VueRouter from 'vue-router'
 import BootstrapVue from 'bootstrap-vue'
 import App from './views/layout/App'
 import Notifications from 'vue-notification'
+import Axios from 'axios';
+import VueAxios from 'vue-axios';
 
+/**
+ * Import libraries
+ */
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
 Vue.use(Notifications);
+Vue.use(VueAxios, Axios);
 
+/**
+ * Component
+ */
 Vue.component('top-bar-component', require('./components/layout/TopBarComponent.vue'));
 Vue.component('menu-component', require('./components/layout/MenuComponent.vue'));
 Vue.component('page-header-component', require('./components/layout/PageHeaderComponent.vue'));
-
+Vue.prototype.http = Axios;
+/**
+ * Routes
+ */
 const router = new VueRouter({
     mode: 'history',
     routes: routes,
 });
 
+Vue.router = router;
+
+Vue.use(require('@websanova/vue-auth'), {
+    auth: require('@websanova/vue-auth/drivers/auth/bearer.js'),
+    http: require('@websanova/vue-auth/drivers/http/axios.1.x.js'),
+    router: require('@websanova/vue-auth/drivers/router/vue-router.2.x.js'),
+});
+
+/**
+ * Global data
+ */
 let globalData = new Vue({
     data: {
         $pageHeader: '',
@@ -26,6 +49,9 @@ let globalData = new Vue({
     }
 });
 
+/**
+ * Mixin
+ */
 Vue.mixin({
     computed: {
         $pageHeader: {
@@ -54,8 +80,13 @@ Vue.mixin({
     }
 });
 
+
+/**
+ * Init Vue
+ */
 export const app = new Vue({
     el: '#app',
     components: { App },
-    router
+    router 
 });
+
