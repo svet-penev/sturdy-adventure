@@ -55,7 +55,7 @@
                 this.error = null;
                 this.loading = true;
                 this.http
-                    .post('/api/users', this.item)
+                    .post('/users', this.item)
                     .then(response => {
                         this.item = response.data.data
                         this.loading = false;

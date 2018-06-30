@@ -61,7 +61,7 @@
                 this.error = this.items = null;
                 this.loading = true;
                 this.http
-                    .get('/api/users?page='+page)
+                    .get('/users?page='+page)
                     .then(response => {
                         this.loading = false;
                         this.items = this.buildTableColumns(response.data.data, ['email', 'name']);
@@ -76,7 +76,7 @@
             },
             deleteData(item) {
                  this.http
-                    .delete('/api/users/'+item.item.action)
+                    .delete('/users/'+item.item.action)
                     .then(response => {
                           this.$notify({
                             title: 'Delete User',

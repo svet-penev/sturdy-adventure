@@ -14,19 +14,6 @@ use Illuminate\Http\Request;
 */
 
 /**
- * Auth route
- */
-Route::post('auth/login', 'AuthController@login');
-
-Route::group(['middleware' => 'jwt.auth'], function(){
-  Route::get('auth/user', 'AuthController@user');
-});
-
-Route::group(['middleware' => 'jwt.refresh'], function(){
-  Route::get('auth/refresh', 'AuthController@refresh');
-});
-
-/**
  * Api route
  */
 Route::namespace('Api')->group(function () {
@@ -35,9 +22,18 @@ Route::namespace('Api')->group(function () {
     Route::post('/users', 'UsersController@store');
     Route::put('/users/{id}', 'UsersController@update');
     Route::delete('/users/{id}', 'UsersController@delete');
-});
 
+     /**
+     * Auth route
+     */
+    Route::post('auth/login', 'AuthController@login');
 
-Route::group(['middleware' => 'jwt.auth'], function(){
-    Route::post('auth/logout', 'AuthController@logout');
+    Route::group(['middleware' => 'jwt.auth'], function(){
+      Route::get('auth/user', 'AuthController@user');
+      Route::post('auth/logout', 'AuthController@logout');
+    });
+    
+    Route::group(['middleware' => 'jwt.refresh'], function(){
+      Route::get('auth/refresh', 'AuthController@refresh');
+    });
 });

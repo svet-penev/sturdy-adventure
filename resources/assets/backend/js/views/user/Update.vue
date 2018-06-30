@@ -59,7 +59,7 @@
                 this.error = null;
                 this.loading = true;
                 this.http
-                    .get('/api/users/'+this.item.id)
+                    .get('/users/'+this.item.id)
                     .then(response => {
                         this.item = response.data.data;
                         this.loading = false;
@@ -71,7 +71,7 @@
                 this.error = null;
                 this.loading = true;
                 this.http
-                    .put('/api/users/'+this.item.id, this.item)
+                    .put('/users/'+this.item.id, this.item)
                     .then(response => {
                         this.loading = false;
                           this.$notify({

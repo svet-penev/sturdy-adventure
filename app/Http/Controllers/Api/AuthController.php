@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
+use Tymon\JWTAuth\Facades\JWTAuth;
+use App\Http\Controllers\Controller;
+use App\User;
 
 class AuthController extends Controller
 {
@@ -30,7 +33,7 @@ class AuthController extends Controller
      */
     public function user(Request $request)
     {
-        $user = User::find(Auth::user()->id);
+        $user = User::find(\Auth::user()->id);
         return response([
                 'status' => 'success',
                 'data' => $user
@@ -53,6 +56,7 @@ class AuthController extends Controller
     public function logout()
     {
         JWTAuth::invalidate();
+        
         return response([
                 'status' => 'success',
                 'msg' => 'Logged out Successfully.'

@@ -50,16 +50,14 @@
           email: this.email,
           password: this.password
         };
-        this.http.post('/api/auth/login', params)
-                .then(response => {
-                  console.log(response);
-                }).catch(error => {
-                    this.loading = false;
-                    this.$notify({
-                        type: 'error',
-                        title: 'Something goes wrong!',
-                    });
-                });
+        this.$auth.login({
+            params: params, 
+            success: function () {},
+            error: function () {},
+            rememberMe: true,
+            redirect: '/',
+            fetchUser: true,
+        });
       },
     }
   } 
