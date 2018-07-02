@@ -17,7 +17,7 @@
                   <input type="password" class="form-control form-control-lg" id="password" placeholder="Password" v-model="password" required>
                 </div>
                 <div class="mt-3">
-                  <button type="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>
+                  <button type="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">LOGIN</button>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
                   <div class="form-check">
