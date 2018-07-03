@@ -26,9 +26,9 @@
             password: null,
             error: false
         }
-        },
+      },
       methods: {
-        logout(){
+        logout() {
             this.$auth.logout({
                 success: function () {},
                 error: function () {},

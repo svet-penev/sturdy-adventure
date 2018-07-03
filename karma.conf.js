@@ -1,6 +1,6 @@
 
 
-var webpackConf = require('./webpack.mix.js');
+var webpackConf = require('./webpack.test.js');
 delete webpackConf.entry
 
 module.exports = function(config) {
@@ -18,7 +18,7 @@ module.exports = function(config) {
 
         autoWatch: true, // enable / disable watching files & then run tests
 
-        browsers: ['Chrome'], //'PhantomJS', 'Firefox',
+        browsers: ['PhantomJS'], //'PhantomJS', 'Firefox',
 
         singleRun: true, // if true, Karma captures browsers, runs the tests and exits
 
@@ -36,7 +36,7 @@ module.exports = function(config) {
          * This should be your JS Folder where all source javascript
          * files are located.
          */
-        basePath: './resources/assets/',
+        basePath: 'resources/assets/',
 
         /**
          * list of files / patterns to load in the browser
@@ -44,7 +44,7 @@ module.exports = function(config) {
          * tests directory including subdirectories
          **/
         files: [
-            {pattern: 'tests/unit/**/*.js', watched: false},
+            {pattern: 'tests/**/**/*.js', watched: false},
         ],
 
         // list of files to exclude

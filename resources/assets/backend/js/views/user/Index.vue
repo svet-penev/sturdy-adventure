@@ -78,7 +78,7 @@
                  this.http
                     .delete('/users/'+item.item.action)
                     .then(response => {
-                          this.$notify({
+                        this.$notify({
                             title: 'Delete User',
                             text: response.data.data.name+' was succesfully deleted!'
                         });

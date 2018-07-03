@@ -20970,14 +20970,14 @@ var routes = [{
     name: 'users.index',
     component: __WEBPACK_IMPORTED_MODULE_6__views_user_Index___default.a,
     meta: {
-        auth: true
+        auth: false
     }
 }, {
     path: '/users/create',
     name: 'users.create',
     component: __WEBPACK_IMPORTED_MODULE_7__views_user_Create___default.a,
     meta: {
-        auth: true
+        auth: false
     }
 }, {
     path: '/users/update/:id',
@@ -25005,7 +25005,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.$auth.login({
         params: params,
         success: function success() {},
-        error: function error() {},
+        error: function error(response) {
+          this.$notify({
+            title: response.response.data.msg,
+            type: 'error'
+          });
+        },
         rememberMe: true,
         redirect: '/',
         fetchUser: true
@@ -25144,7 +25149,7 @@ var staticRenderFns = [
         {
           staticClass:
             "btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn",
-          attrs: { type: "submit" }
+          attrs: { id: "login", type: "submit" }
         },
         [_vm._v("LOGIN")]
       )

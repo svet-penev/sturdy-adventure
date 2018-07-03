@@ -22,6 +22,9 @@
     "dependencies": {
         "@mdi/font": "^2.4.85",
         "@websanova/vue-auth": "^2.21.13-beta",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-es2016": "^6.24.1",
+        "babel-preset-stage-2": "^6.24.1",
         "bootstrap-vue": "^2.0.0-rc.11",
         "compass-mixins": "^0.12.10",
         "jasmine-core": "^3.1.0",

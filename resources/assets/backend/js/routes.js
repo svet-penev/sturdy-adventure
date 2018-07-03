@@ -30,7 +30,7 @@ let routes = [
             name: 'users.index',
             component: UserIndex,
             meta: {
-                auth: true
+                auth: false
             }
         },
         {
@@ -38,7 +38,7 @@ let routes = [
             name: 'users.create',
             component: UserCreate,
             meta: {
-                auth: true
+                auth: false
             }
         },
         {
