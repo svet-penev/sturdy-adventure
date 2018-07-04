@@ -6,6 +6,9 @@ use Laravel\Dusk\TestCase as BaseTestCase;
 use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
+use Laravel\Dusk\Page;
+use Laravel\Dusk\Browser;
+use Tests\Browser\Pages\Login;
 
 abstract class DuskTestCase extends BaseTestCase
 {
@@ -30,6 +33,7 @@ abstract class DuskTestCase extends BaseTestCase
     protected function driver()
     {
         $options = (new ChromeOptions)->addArguments([
+            '--window-size=1440,900',
             '--disable-gpu',
             '--headless'
         ]);
@@ -41,3 +45,18 @@ abstract class DuskTestCase extends BaseTestCase
         );
     }
 }
+
+Browser::macro('assertPageIs', function ($page) {
+    if (! $page instanceof Page) {
+        $page = new $page;
+    }
+    return $this->assertPathIs($page->url());
+});
+
+Browser::macro('loginUser', function ($user) {
+    return $this->visit(new Login())
+        ->type('#email', $user->email)
+        ->type('#password', 'secret')
+        ->press('LOGIN')
+        ->pause(350);
+});

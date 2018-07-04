@@ -13,18 +13,18 @@
                 <div class="card-body">
                     <form class="forms-sample">
                         <div class="form-group">
-                            <label for="exampleInputName1">Name</label>
-                            <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" v-model="item.name">
+                            <label for="user-name">Name</label>
+                            <input type="text" class="form-control" id="user-name" placeholder="Name" v-model="item.name">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail3">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email"  v-model="item.email">
+                            <label for="user-email">Email address</label>
+                            <input type="email" class="form-control" id="user-email" placeholder="Email"  v-model="item.email">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword4">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password"  v-model="item.password">
+                            <label for="user-password">Password</label>
+                            <input type="password" class="form-control" id="user-password" placeholder="Password"  v-model="item.password">
                         </div>
-                        <button type="button" class="btn btn-gradient-primary mr-2" @click="saveData">Submit</button>
+                        <button id="user-submit" type="button" class="btn btn-gradient-primary mr-2" @click="saveData">Submit</button>
                     </form>
                 </div>
             </div>

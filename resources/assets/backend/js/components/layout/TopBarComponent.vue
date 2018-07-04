@@ -6,7 +6,7 @@
         <div class="navbar-menu-wrapper d-flex align-items-stretch">
             <ul class="navbar-nav navbar-nav-right">
                 <li class="nav-item nav-logout d-none d-lg-block">
-                    <a class="nav-link" @click="logout">
+                    <a id="logout" class="nav-link" @click="logout">
                         <i class="mdi mdi-power"></i>
                     </a>
                 </li>

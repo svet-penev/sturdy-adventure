@@ -50,6 +50,7 @@
           email: this.email,
           password: this.password
         };
+        console.log(params);
         this.$auth.login({
             params: params, 
             success: function () {},
