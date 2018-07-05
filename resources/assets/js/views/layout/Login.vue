@@ -8,7 +8,6 @@
               <div class="brand-logo">
                 <img src="/img/logo.svg">
               </div>
-              <h6 class="font-weight-light">Sign in to continue.</h6>
               <form class="pt-3" autocomplete="off" @submit.prevent="login" method="post">
                 <div class="form-group">
                   <input type="email" class="form-control form-control-lg" id="email" placeholder="Email" v-model="email" required>
@@ -50,10 +49,13 @@
           email: this.email,
           password: this.password
         };
-        console.log(params);
         this.$auth.login({
             params: params, 
-            success: function () {},
+            success: function () {
+                this.$notify({
+                    title: 'Welcome!',
+                });
+            },
             error: function (response) {
                 this.$notify({
                     title: response.response.data.msg,

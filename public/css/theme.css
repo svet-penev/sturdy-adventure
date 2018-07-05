@@ -13229,24 +13229,28 @@ input:focus {
   font-family: 'ubuntu-light';
   src: url(/fonts/Ubuntu-Light.eot?b983ed7d8c2e8df7efdcf5fa9c84053b);
   /* IE9 Compat Modes */
+  src: url(/fonts/Ubuntu-Light.woff2?a2747bdce85018821fd9bd3bff356516) format("woff2"), url(/fonts/Ubuntu-Light.woff?50bee00c10cd5036db56af0dcc78d030) format("woff"), url(/fonts/Ubuntu-Light.ttf?4cebf85024818058701dabdc4279995c) format("truetype");
 }
 
 @font-face {
   font-family: 'ubuntu-regular';
   src: url(/fonts/Ubuntu-Regular.eot?a876ac10e23a171502d7f0b11401f828);
   /* IE9 Compat Modes */
+  src: url(/fonts/Ubuntu-Regular.woff2?0782ac86c2c03631f8ab828dbc31a86a) format("woff2"), url(/fonts/Ubuntu-Regular.woff?690d3622d8d391257851634e3c54c062) format("woff"), url(/fonts/Ubuntu-Regular.ttf?e7da1b79b58db42c9a15fdf80e5db9d3) format("truetype");
 }
 
 @font-face {
   font-family: 'ubuntu-medium';
   src: url(/fonts/Ubuntu-Medium.eot?a690c126aca1e56c66640d2e03f4376d);
   /* IE9 Compat Modes */
+  src: url(/fonts/Ubuntu-Medium.woff2?67be82c5bf31cabffea18c717cc3cb68) format("woff2"), url(/fonts/Ubuntu-Medium.woff?a46de1032aba9a4f509979cfdd9cdc77) format("woff"), url(/fonts/Ubuntu-Medium.ttf?aefa011450890445121cd2c43d24a8fb) format("truetype");
 }
 
 @font-face {
   font-family: 'ubuntu-bold';
   src: url(/fonts/Ubuntu-Bold.eot?cece6cb2e964f112b912d871cb14b0fc);
   /* IE9 Compat Modes */
+  src: url(/fonts/Ubuntu-Bold.woff2?81f39b100c12b86eb0f6b143c2547877) format("woff2"), url(/fonts/Ubuntu-Bold.woff?e33d177da1b2e189861e313176ae5223) format("woff"), url(/fonts/Ubuntu-Bold.ttf?7308c07c89a127057df24c13aa426b63) format("truetype");
 }
 
 /* Backgrounds  */

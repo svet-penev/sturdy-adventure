@@ -12,19 +12,10 @@ let mix = require('laravel-mix');
  */
 
 /* --- STYLE ---*/
-
-/* Frontend style */
-
-
-/* Backend style */
-mix.sass('node_modules/@mdi/font/scss/materialdesignicons.scss', 'public/css/backend/material.css');
-mix.sass('resources/assets/backend/sass/theme/style.scss', 'public/css/backend/theme.css');
-mix.sass('resources/assets/backend/sass/style.scss', 'public/css/backend/style.css');
+mix.sass('node_modules/@mdi/font/scss/materialdesignicons.scss', 'public/css/material.css');
+mix.sass('resources/assets/sass/theme/style.scss', 'public/css/theme.css');
+mix.sass('resources/assets/sass/style.scss', 'public/css/style.css');
 
 
 /* --- JAVASCRIPT ---*/
-
-/* Frontend javascript */
-
-/* Backend javascript */
-mix.js('resources/assets/backend/js/app.js', 'public/js/backend/app.js');
+mix.js('resources/assets/js/app.js', 'public/js/app.js');
