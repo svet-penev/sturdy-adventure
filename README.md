@@ -1,8 +1,8 @@
 # SPA using Laravel + VueJS
  SPA using Laravel + VueJS starter project template.
  
-![Login Page](https://raw.githubusercontent.com/svet-penev/sturdy-adventure/master/public/img/login.png
-![User Page](https://raw.githubusercontent.com/svet-penev/sturdy-adventure/master/public/img/users.png
+![Login Page](https://raw.githubusercontent.com/svet-penev/sturdy-adventure/master/public/img/login.png)
+![User Page](https://raw.githubusercontent.com/svet-penev/sturdy-adventure/master/public/img/users.png)
 
 ## Overview
 
